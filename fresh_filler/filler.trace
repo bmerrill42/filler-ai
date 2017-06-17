@@ -1,0 +1,7 @@
+seed = 4456
+O: error on input
+X: error on input
+./filler: Segfault at 0
+./filler won
+Score:
+0AGAINST0
