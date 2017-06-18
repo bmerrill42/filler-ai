@@ -1,11 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   visualizer.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bmerrill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/06/18 02:35:38 by bmerrill          #+#    #+#             */
+/*   Updated: 2017/06/18 02:38:06 by bmerrill         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <ncurses.h>
-#include <string.h>
-#include <stdio.h>
-#include <unistd.h>
-#include "libft/libft.h"
+#include "libft.h"
 
-
-void	init_my_colors()
+void	init_my_colors(void)
 {
 	init_pair(1, COLOR_RED, COLOR_RED);
 	init_pair(2, COLOR_BLUE, COLOR_BLUE);
@@ -44,26 +52,25 @@ void	line_work(char *line, int *i)
 	}
 }
 
-int main()
+int		main(void)
 {
-	char *line;
-	int fp;
-	int i = 0;
+	char	*line;
+	int		fp;
+	int		i;
 
+	i = 0;
 	line = NULL;
 	initscr();
 	while (get_next_line(0, &line))
 	{
 		start_color();
 		init_my_colors();
-		if (line[0] == '0' || (line[0] == 'P' && line[1] != 'i') || line[0] == ' ' || line[0] == '<')
+		if (line[0] == '0' || (line[0] == 'P' && line[1] != 'i') ||
+			line[0] == ' ' || line[0] == '<')
 		{
 			line_work(line, &i);
 			if (line[0] == '<')
-			{
-				usleep(17000);
 				mvaddch(0, 0, ' ');
-			}
 			addch('\n');
 			i = 0;
 		}

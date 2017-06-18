@@ -6,34 +6,11 @@
 /*   By: bmerrill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/15 22:34:37 by bmerrill          #+#    #+#             */
-/*   Updated: 2017/06/17 01:57:47 by bmerrill         ###   ########.fr       */
+/*   Updated: 2017/06/18 02:23:02 by bmerrill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
-
-t_movelist	*new_mlist(int x, int y, int score, int me)
-{
-	t_movelist *ret;
-
-	ret = (t_movelist *)malloc(sizeof(t_movelist));
-	ret->position.x = x;
-	ret->position.y = y;
-	ret->my_piece_count = me;
-	ret->opponant_piece_count = score;
-	ret->next = NULL;
-	return (ret);
-}
-
-void		add_mlist(t_movelist **list, t_movelist *new)
-{
-	t_movelist *tmp;
-
-	tmp = *list;
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = new;
-}
 
 void		expand_corners(t_piece *piece, t_xypair *nw,
 							t_xypair *se, int offset)
@@ -78,8 +55,10 @@ void		get_score_counts(t_board *b, t_piece *p, t_xypair *pos)
 
 void		score_and_add_position(t_board *board, t_piece *piece, int x, int y)
 {
-	t_xypair position;
+	t_xypair	position;
+	t_movelist	*freeme;
 
+	freeme = NULL;
 	piece->me_count = 0;
 	piece->op_count = 0;
 	expand_corners(piece, &piece->searchboundnw, &piece->searchboundse, 3);
@@ -88,10 +67,15 @@ void		score_and_add_position(t_board *board, t_piece *piece, int x, int y)
 	adjust_search_within_bounds(&position, &piece->searchboundse, board);
 	get_score_counts(board, piece, &position);
 	if (!piece->movelist)
-		piece->movelist = new_mlist(x - piece->bound_nw.x, y - piece->bound_nw.y
-									,piece->op_count, piece->me_count);
+	{
+		freeme = new_mlist(x - piece->bound_nw.x, y - piece->bound_nw.y,
+							piece->op_count, piece->me_count);
+		piece->movelist = freeme;
+	}
 	else
-		add_mlist(&(piece->movelist),
-				  new_mlist(x - piece->bound_nw.x, y - piece->bound_nw.y,
-					piece->op_count, piece->me_count));
+	{
+		freeme = new_mlist(x - piece->bound_nw.x, y - piece->bound_nw.y,
+							piece->op_count, piece->me_count);
+		add_mlist(&(piece->movelist), freeme);
+	}
 }

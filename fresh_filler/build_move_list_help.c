@@ -6,7 +6,7 @@
 /*   By: bmerrill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/15 21:12:54 by bmerrill          #+#    #+#             */
-/*   Updated: 2017/06/17 01:57:51 by bmerrill         ###   ########.fr       */
+/*   Updated: 2017/06/17 19:58:41 by bmerrill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	scan(t_board *board, t_piece *piece, int x, int y)
 	if (y < board->boardheight && x < board->boardwidth)
 		while (c.y <= piece->bound_se.y && y < board->boardheight)
 		{
-			if (y + (piece->bound_se.y) >= board->boardheight)
+			if (y + (piece->bound_se.y - c.y) > board->boardheight - 1)
 				return (0);
 			c.x = piece->bound_nw.x;
 			if (x + (piece->bound_se.x - c.x) < board->boardwidth)

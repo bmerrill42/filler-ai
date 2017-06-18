@@ -6,7 +6,7 @@
 /*   By: bmerrill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/13 07:18:47 by bmerrill          #+#    #+#             */
-/*   Updated: 2017/06/17 03:27:17 by bmerrill         ###   ########.fr       */
+/*   Updated: 2017/06/18 02:07:25 by bmerrill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ char	*new_board_matrix(t_board *board, char *first_line)
 	get_players(board, first_line);
 	get_next_line(0, &first_line);
 	get_xy_from_str(&board->boardwidth, &board->boardheight, first_line);
-	free(first_line);
-	get_next_line(0, &first_line);
-	free(first_line);
 	get_next_line(0, &first_line);
 	free(first_line);
 	first_line = dup_the_board(board, first_line);
@@ -31,8 +28,9 @@ char	*new_board_matrix(t_board *board, char *first_line)
 
 char	*copy_board_matrix(t_board *board, char *first_line)
 {
-	while (first_line[0] != '0')
-		get_next_line(0, &first_line);
+	free(first_line);
+	get_next_line(0, &first_line);
+	free(first_line);
 	first_line = copy_new_map_into_old(board, first_line);
 	return (first_line);
 }
@@ -42,12 +40,15 @@ void	new_piece(t_piece *piece, char *line)
 	int y;
 
 	y = 0;
+	if (line[0] != 'P')
+		get_next_line(0, &line);
 	get_xy_from_str(&piece->piecewidth, &piece->pieceheight, line);
 	piece->piece = (char **)malloc(piece->pieceheight * sizeof(char*));
 	while (y < piece->pieceheight)
 	{
 		get_next_line(0, &line);
 		piece->piece[y] = ft_strdup(line);
+		free(line);
 		y++;
 	}
 	find_bounding(piece);
