@@ -6,7 +6,7 @@
 #    By: bmerrill <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/31 18:31:30 by bmerrill          #+#    #+#              #
-#    Updated: 2017/06/18 21:06:58 by bmerrill         ###   ########.fr        #
+#    Updated: 2017/06/18 21:14:07 by bmerrill         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -39,10 +39,11 @@ all: $(NAME) $(VIS)
 $(VIS): $(VISFILES)
 	$(CC) $(FLAGS) $(VISLIB) -I$(INCLUDE) -L$(LIBFT) $(LLFT) $< -o $(VIS)
 
-$(NAME): $(LLFT) $(OFILES)
+$(NAME): $(LLFT) $(OBJDIR) $(OFILES)
 	$(CC) $(FLAGS) -I$(INCLUDE) -L$(LIBFT) $(LLFT) $(OFILES) -o $(NAME)
 
-
+$(OBJDIR):
+	mkdir obj
 
 obj/%.o: src/%.c
 	$(CC) $(FLAGS) -I$(INCLUDE) -c $< -o $@
