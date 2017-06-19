@@ -18,10 +18,13 @@ OFILES = $(addsuffix .o, $(FILENAMES))
 
 all: $(NAME)
 
-$(NAME):
-	gcc -c $(CFILES)
-	ar rc $(NAME) $(OFILES)
+$(NAME): $(OFILES)
+	ar rc $(NAME) $^
 	ranlib $(NAME)
+
+%.o: %.c
+	gcc -c $< -o $@
+
 clean:
 	rm -f $(OFILES)
 fclean: clean

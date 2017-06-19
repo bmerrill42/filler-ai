@@ -6,7 +6,7 @@
 #    By: bmerrill <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/31 18:31:30 by bmerrill          #+#    #+#              #
-#    Updated: 2017/06/18 21:14:07 by bmerrill         ###   ########.fr        #
+#    Updated: 2017/06/18 22:10:01 by bmerrill         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -25,7 +25,7 @@ CFILES= main.c \
 		move_list_stuff.c \
 		pick_a_spot_help.c
 OFILES=$(addprefix $(OBJDIR),$(CFILES:.c=.o))
-NAME=players/filler
+NAME=filler
 LIBFT=./libft/
 LLFT=libft/libft.a
 INCLUDE=./includes/
@@ -41,6 +41,7 @@ $(VIS): $(VISFILES)
 
 $(NAME): $(LLFT) $(OBJDIR) $(OFILES)
 	$(CC) $(FLAGS) -I$(INCLUDE) -L$(LIBFT) $(LLFT) $(OFILES) -o $(NAME)
+	cp $(NAME) players/
 
 $(OBJDIR):
 	mkdir obj
