@@ -6,13 +6,13 @@
 #    By: bmerrill <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/31 18:31:30 by bmerrill          #+#    #+#              #
-#    Updated: 2017/06/18 18:59:26 by bmerrill         ###   ########.fr        #
+#    Updated: 2017/06/18 19:40:02 by bmerrill         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 CC=gcc
 OBJDIR=./obj/
-FLAGS=-Wall -Werror -Wextra
+FLAGS=-Wall -Werror -Wextra -g
 CFILES= main.c \
 		build_move_list_help.c \
 		copy_board_help.c \
@@ -58,4 +58,6 @@ fclean: clean
 	rm -f players/$(NAME) $(VIS)
 	make -C libft/ fclean
 
-.phony: all clean fclean libftcomp re
+re: fclean all
+
+.phony: all clean fclean re

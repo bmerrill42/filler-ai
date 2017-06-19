@@ -6,7 +6,7 @@
 /*   By: bmerrill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/13 07:28:41 by bmerrill          #+#    #+#             */
-/*   Updated: 2017/06/18 02:33:02 by bmerrill         ###   ########.fr       */
+/*   Updated: 2017/06/18 19:45:00 by bmerrill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	get_xy_from_str(int *x, int *y, char *line)
 	while (ft_isdigit(line[i]))
 		i += 1;
 	*x = ft_atoi(line + i);
-	free(line);
 }
 
 char	*dup_the_board(t_board *board, char *line)
