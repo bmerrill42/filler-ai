@@ -6,13 +6,13 @@
 #    By: bmerrill <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/31 18:31:30 by bmerrill          #+#    #+#              #
-#    Updated: 2017/06/18 19:40:02 by bmerrill         ###   ########.fr        #
+#    Updated: 2017/06/18 21:06:58 by bmerrill         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 CC=gcc
 OBJDIR=./obj/
-FLAGS=-Wall -Werror -Wextra -g
+FLAGS=-Wall -Werror -Wextra
 CFILES= main.c \
 		build_move_list_help.c \
 		copy_board_help.c \

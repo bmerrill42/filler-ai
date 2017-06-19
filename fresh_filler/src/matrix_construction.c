@@ -6,7 +6,7 @@
 /*   By: bmerrill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/13 07:18:47 by bmerrill          #+#    #+#             */
-/*   Updated: 2017/06/18 02:07:25 by bmerrill         ###   ########.fr       */
+/*   Updated: 2017/06/18 20:49:14 by bmerrill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ char	*new_board_matrix(t_board *board, char *first_line)
 	get_players(board, first_line);
 	get_next_line(0, &first_line);
 	get_xy_from_str(&board->boardwidth, &board->boardheight, first_line);
+	free(first_line);
 	get_next_line(0, &first_line);
 	free(first_line);
 	first_line = dup_the_board(board, first_line);
@@ -40,9 +41,9 @@ void	new_piece(t_piece *piece, char *line)
 	int y;
 
 	y = 0;
-	if (line[0] != 'P')
-		get_next_line(0, &line);
+	get_next_line(0, &line);
 	get_xy_from_str(&piece->piecewidth, &piece->pieceheight, line);
+	free(line);
 	piece->piece = (char **)malloc(piece->pieceheight * sizeof(char*));
 	while (y < piece->pieceheight)
 	{
