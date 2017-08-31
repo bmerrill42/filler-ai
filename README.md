@@ -4,21 +4,17 @@
 <ul>
 <li><a href="#sec-1">1. Introduction</a></li>
 <li><a href="#sec-2">2. Goals</a></li>
-<li><a href="#sec-3">3. Filler</a>
+<li><a href="#sec-3">3. My strategy</a></li>
+<li><a href="#sec-4">4. Subject</a>
 <ul>
-<li><a href="#sec-3-1">3.1. The Filler</a></li>
-<li><a href="#sec-3-2">3.2. The Board</a></li>
-<li><a href="#sec-3-3">3.3. The tokens</a></li>
+<li><a href="#sec-4-1">4.1. The Filler</a></li>
+<li><a href="#sec-4-2">4.2. The Board</a></li>
+<li><a href="#sec-4-3">4.3. The tokens</a></li>
+<li><a href="#sec-4-4">4.4. The Player</a></li>
+<li><a href="#sec-4-5">4.5. Multi Players</a></li>
+<li><a href="#sec-4-6">4.6. How the game rolls</a></li>
 </ul>
 </li>
-<li><a href="#sec-4">4. The topic</a>
-<ul>
-<li><a href="#sec-4-1">4.1. The Player</a></li>
-<li><a href="#sec-4-2">4.2. Multi Players</a></li>
-<li><a href="#sec-4-3">4.3. How the game rolls</a></li>
-</ul>
-</li>
-<li><a href="#sec-5">5. My strategy</a></li>
 </ul>
 </div>
 </div>
@@ -31,9 +27,13 @@ Create your player to fight other students on the world famous (or infamous) Fil
 
 The goal of this project is to introduce you to basic algorithm and to have you manipulate inputs/outputs.
 
-# Filler<a id="sec-3" name="sec-3"></a>
+# My strategy<a id="sec-3" name="sec-3"></a>
 
-## The Filler<a id="sec-3-1" name="sec-3-1"></a>
+My player scans the whole board for legal spots to place a piece, when it finds a legal spot it stores that in a linked list with the count of the surrounding enemy and friendly pieces. 
+
+# Subject<a id="sec-4" name="sec-4"></a>
+
+## The Filler<a id="sec-4-1" name="sec-4-1"></a>
 
 -   In this game, two players fight each other. They play one after the other.
 -   The goal is to collect as many points as possible by placing the highest number of pieces on the the game board.
@@ -45,7 +45,7 @@ The goal of this project is to introduce you to basic algorithm and to have you 
 -   When the game starts, the board already contains one shape.
 -   The game stops at the first error: either when a game piece cannot be placed anymore or it has been wrongly placed.
 
-## The Board<a id="sec-3-2" name="sec-3-2"></a>
+## The Board<a id="sec-4-2" name="sec-4-2"></a>
 
     A 14x30 board:
     Plateau 14 30:
@@ -65,7 +65,7 @@ The goal of this project is to introduce you to basic algorithm and to have you 
     012 ..............................
     013 ..............................
 
-## The tokens<a id="sec-3-3" name="sec-3-3"></a>
+## The tokens<a id="sec-4-3" name="sec-4-3"></a>
 
 -   An example of a 4x7 token
     
@@ -88,9 +88,7 @@ The goal of this project is to introduce you to basic algorithm and to have you 
         **....
         *.....
 
-# The topic<a id="sec-4" name="sec-4"></a>
-
-## The Player<a id="sec-4-1" name="sec-4-1"></a>
+## The Player<a id="sec-4-4" name="sec-4-4"></a>
 
 -   The executable that will enable you to play the filler is attached to this subject.
     -   For this project, you will have to create a filler player. Your goal is to win:
@@ -122,7 +120,7 @@ The goal of this project is to introduce you to basic algorithm and to have you 
             ...*...
             ..***..
 
-## Multi Players<a id="sec-4-2" name="sec-4-2"></a>
+## Multi Players<a id="sec-4-5" name="sec-4-5"></a>
 
 -   Player number:
     -   The first two lines of the filler must be in the following format:
@@ -137,7 +135,7 @@ The goal of this project is to introduce you to basic algorithm and to have you 
     -   The player concerned will write on the standard output his or her piece’s coordinates to place it on the board.
     -   The filler will send the map and a new piece to the other player.
 
-## How the game rolls<a id="sec-4-3" name="sec-4-3"></a>
+## How the game rolls<a id="sec-4-6" name="sec-4-6"></a>
 
 -   Here is an example on how a game will roll out.
     
@@ -205,7 +203,3 @@ The goal of this project is to introduce you to basic algorithm and to have you 
         [...]
         == X fin : 175 [1018918090]
         == O fin : 168 [1018918090]
-
-# My strategy<a id="sec-5" name="sec-5"></a>
-
-My player scans the whole board for legal spots to place a piece, when it finds a legal spot it stores that in a linked list with the count of the surrounding enemy and friendly pieces.
