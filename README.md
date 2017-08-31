@@ -63,27 +63,25 @@ Create your player to fight other students on the world famous (or infamous) Fil
 ### The tokens<a id="sec-1-1-4" name="sec-1-1-4"></a>
 
 -   An example of a 4x7 token
-
-    Piece 4 7:
-    ...*...
-    ...*...
-    ...*...
-    ..***..
-
+    
+        Piece 4 7:
+        ...*...
+        ...*...
+        ...*...
+        ..***..
 -   An example of a 4x5 token
-
-    Piece 4 5:
-    .**..
-    .***.
-    ..*..
-    .....
-
+    
+        Piece 4 5:
+        .**..
+        .***.
+        ..*..
+        .....
 -   An example of a 3x6 token
-
-    Piece 3 6:
-    .****.
-    **....
-    *.....
+    
+        Piece 3 6:
+        .****.
+        **....
+        *.....
 
 # Goals<a id="sec-2" name="sec-2"></a>
 
