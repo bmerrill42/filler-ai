@@ -8,11 +8,13 @@
 <ul>
 <li><a href="#sec-1-1-1">1.1.1. Introduction</a></li>
 <li><a href="#sec-1-1-2">1.1.2. The Filler</a></li>
+<li><a href="#sec-1-1-3">1.1.3. The Board</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><a href="#sec-2">2. Goals</a></li>
+<li><a href="#sec-3">3. My strategy</a></li>
 </ul>
 </div>
 </div>
@@ -37,6 +39,31 @@ Create your player to fight other students on the world famous (or infamous) Fil
 -   When the game starts, the board already contains one shape.
 -   The game stops at the first error: either when a game piece cannot be placed anymore or it has been wrongly placed.
 
+### The Board<a id="sec-1-1-3" name="sec-1-1-3"></a>
+
+-   A 14x30 board
+
+Plateau 14 30:
+012345678901234567890123456789
+000 &#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;
+001 &#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;
+002 &#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;
+003 &#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;
+004 &#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;
+005 &#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;
+006 &#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;
+007 &#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;
+008 &#x2026;&#x2026;&#x2026;&#x2026;&#x2026;O&#x2026;&#x2026;&#x2026;&#x2026;..
+009 &#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;
+010 &#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;
+011 &#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;
+012 &#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;
+013 &#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;&#x2026;
+
 # Goals<a id="sec-2" name="sec-2"></a>
 
 The goal of this project is to introduce you to basic algorithm and to have you manipulate inputs/outputs.
+
+# My strategy<a id="sec-3" name="sec-3"></a>
+
+My player scans the whole board for legal spots to place a piece, when it finds a legal spot it stores that in a linked list with the count of the surrounding enemy and friendly pieces.
