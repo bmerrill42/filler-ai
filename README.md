@@ -9,6 +9,7 @@
 <li><a href="#sec-1-1-1">1.1.1. Introduction</a></li>
 <li><a href="#sec-1-1-2">1.1.2. The Filler</a></li>
 <li><a href="#sec-1-1-3">1.1.3. The Board</a></li>
+<li><a href="#sec-1-1-4">1.1.4. The tokens</a></li>
 </ul>
 </li>
 </ul>
@@ -41,7 +42,7 @@ Create your player to fight other students on the world famous (or infamous) Fil
 
 ### The Board<a id="sec-1-1-3" name="sec-1-1-3"></a>
 
-    A 14x30 board    
+    A 14x30 board:
     Plateau 14 30:
     012345678901234567890123456789
     000 ..............................
@@ -58,6 +59,31 @@ Create your player to fight other students on the world famous (or infamous) Fil
     011 ..............................
     012 ..............................
     013 ..............................
+
+### The tokens<a id="sec-1-1-4" name="sec-1-1-4"></a>
+
+-   An example of a 4x7 token
+
+    Piece 4 7:
+    ...*...
+    ...*...
+    ...*...
+    ..***..
+
+-   An example of a 4x5 token
+
+    Piece 4 5:
+    .**..
+    .***.
+    ..*..
+    .....
+
+-   An example of a 3x6 token
+
+    Piece 3 6:
+    .****.
+    **....
+    *.....
 
 # Goals<a id="sec-2" name="sec-2"></a>
 
